@@ -36,3 +36,15 @@ html {
   grid-template-columns: repeat(2, calc(50% - 2.5vw));
   width: 66%;
 }
+
+#feedbackSidebar {
+  display: flex;
+  width: 30%;
+  padding: 15px;
+  padding-top: 2%;
+  height: calc(100vh - 40px);
+  position: fixed;
+  right: 0px;
+  top: 5px;
+  border-radius: 5% 0 0 5%;
+}
