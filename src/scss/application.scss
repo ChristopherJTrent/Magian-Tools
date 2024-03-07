@@ -7,12 +7,12 @@ html {
 .equipment-grid {
     display: flex;
     flex-wrap: wrap;
-    width: 23%;
+    margin-left: 2.5vw;
     & > input {
         width: calc(25% - 8px);
         margin: 2px;
         color: inherit;
-        background-color: variables.$surface-200;
+        background-color: variables.$surface-300;
         border: none;
         appearance:textfield;
         text-align: center;
@@ -22,4 +22,14 @@ html {
             margin: 0;
         }
     }
+}
+
+.materialCard {
+    background-color: variables.$surface-200;
+    display: flex;
+}
+
+#equipmentPanel {
+    display:grid;
+    grid-template-columns: repeat(2, calc(50% - 2.5vw));
 }

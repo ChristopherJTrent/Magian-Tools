@@ -9,13 +9,13 @@ html {
 .equipment-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 23%;
+  margin-left: 2.5vw;
 }
 .equipment-grid > input {
   width: calc(25% - 8px);
   margin: 2px;
   color: inherit;
-  background-color: #282828;
+  background-color: #3f3f3f;
   border: none;
   appearance: textfield;
   text-align: center;
@@ -24,4 +24,14 @@ html {
 .equipment-grid > input::-webkit-inner-spin-button, .equipment-grid > input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.materialCard {
+  background-color: #282828;
+  display: flex;
+}
+
+#equipmentPanel {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 2.5vw));
 }

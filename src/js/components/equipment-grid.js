@@ -1,9 +1,9 @@
-import Component from "../lib/Nyzul/engine/component.js";
+import { Component } from "../lib/Nyzul/index.mjs";
 import {DataStore} from '../lib/Storehouse/index.mjs';
 
 export default class EquipmentGrid extends Component {
     constructor(dataStoreKey) {
-        super()
+        super(document.createElement('span'))
         this.element.classList.add('equipment-grid')
         this.dataStoreKey = dataStoreKey;
         const [set, get] = DataStore.registerArrayProvider(this.dataStoreKey);
@@ -21,7 +21,7 @@ export default class EquipmentGrid extends Component {
             box.setAttribute('type', 'number');
             box.setAttribute('data-index', `${i}`)
             box.addEventListener('input', this.updateListeners.bind(this))
-            this.element.appendChild(box)
+            this.appendChild(box)
         }
         return this.element;
     }

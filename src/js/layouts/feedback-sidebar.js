@@ -8,5 +8,6 @@ export default class FeedbackSidebar extends Component {
     }
     render() {
 
+        return this.element
     }
 }
