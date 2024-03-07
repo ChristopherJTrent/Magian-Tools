@@ -1,0 +1,4 @@
+@use "variables.scss";
+html {
+    background-color: variables.$background-color;
+}
