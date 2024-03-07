@@ -1,5 +1,5 @@
-import { sum } from "./aggregators";
-import DataBlock from "./data-block";
+import { sum } from "./aggregators.js";
+import DataBlock from "./data-block.js";
 /** @template T */
 export default  class ArrayDataBlock extends DataBlock {
 
@@ -8,6 +8,7 @@ export default  class ArrayDataBlock extends DataBlock {
      * @param {T[]} value 
      */
     constructor(value = []) {
+        super();
         this.value = value;
         this.subscribers = [];
     }

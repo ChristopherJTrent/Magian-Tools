@@ -1,9 +1,15 @@
-import { sum } from "./aggregators";
-import ArrayDataBlock from "./array-data-block";
-import DataBlock from "./data-block"
-import EnumDataBlock from "./enum-data-block";
+import { sum } from "./aggregators.js";
+import ArrayDataBlock from "./array-data-block.js";
+import DataBlock from "./data-block.js"
+import EnumDataBlock from "./enum-data-block.js";
 
+
+/**
+ * @static
+ */
 export default class DataStore {
+    constructor() {throw new ReferenceError('reference to undeclared variable "DataStore"')}
+    
     /** @type {Map<String, DataBlock>} */
     static storage = new Map()
 
@@ -16,6 +22,7 @@ export default class DataStore {
             () => DataStore.storage.get(key).value
         ]
     }
+
     static registerArrayProvider(key, startingValue = []) {
         DataStore.storage.set(key, new ArrayDataBlock(startingValue));
         return [
@@ -45,5 +52,8 @@ export default class DataStore {
             throw new TypeError(`${key} is not an aggregate provider`)
         }
         return block.subscribeAggregate(callback, aggregator);
+    }
+    static hasProvider(key) {
+        return DataStore.storage.has(key);
     }
 }
