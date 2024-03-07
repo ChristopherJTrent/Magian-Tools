@@ -23,4 +23,11 @@ export class NyzulNode {
     appendComponent(component) {
         this.appendChild(component.render());
     }
+    /**
+     * appends a node to this object
+     * @param {NyzulNode} node
+     */
+    appendNode(node) {
+        this.appendChild(node.element);
+    }
 }
