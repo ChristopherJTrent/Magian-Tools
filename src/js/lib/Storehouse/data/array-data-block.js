@@ -33,7 +33,7 @@ export default  class ArrayDataBlock extends DataBlock {
      * @returns {undefined}
      */
     subscribeAggregate(callback, aggregator = sum) {
-       callback(aggregator(this.value));
+        this.subscribe(() => {callback(aggregator(this.value));})
     }
 
 }

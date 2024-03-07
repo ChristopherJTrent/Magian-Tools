@@ -16,6 +16,7 @@ export default class DataBlock {
      */
     subscribe(callback) {
         this.subscribers.push(callback)
+        console.log(this.subscribers)
     }
     setValue(val) {
         this.value = val
