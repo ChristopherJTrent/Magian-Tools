@@ -1,5 +1,6 @@
 
 # Magian Calc
+<img align="center" width="128" height="128" src="https://raw.githubusercontent.com/ChristopherJTrent/Magian-Calc/master/favicon.ico">  
 
 ## Background
 
@@ -31,7 +32,7 @@ This project will be implemented with the following tools:
 - Core HTML visualization elements
 - Webpack and Babel for transpilation and bundling
 - NPM to manage project dependencies
-- [Jest](https://jestjs.io) for testing
+- [Jasmine](https://jasmine.github.io) for testing
 - [Trello](https://trello.com/b/V5stLJ8s/calc) for project management
 
 ## Implementation Timeline
