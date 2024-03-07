@@ -1,17 +1,16 @@
 import { Component } from "../lib/Nyzul/index.mjs";
-import {DataStore} from '../lib/Storehouse/index.mjs';
+import {Storehouse} from '../lib/Storehouse/index.mjs';
 
 export default class EquipmentGrid extends Component {
     constructor(dataStoreKey) {
         super(document.createElement('span'))
         this.element.classList.add('equipment-grid')
         this.dataStoreKey = dataStoreKey;
-        const [set, get] = DataStore.registerArrayProvider(this.dataStoreKey);
+        const [set, get] = Storehouse.registerArrayProvider(this.dataStoreKey);
         this.setValue = set;
         this.getValue = get;
 
         this.element.id = `equipment-grid-${this.dataStoreKey}`;
-        DataStore.registerAggregateSubscriber(this.dataStoreKey, (v) => console.log("callback: " + v))
     }
     render() {
         const dataGrid = this.getValue();
