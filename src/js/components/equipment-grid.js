@@ -4,11 +4,12 @@ import {DataStore} from '../lib/Storehouse/index.mjs';
 export default class EquipmentGrid extends Component {
     constructor(dataStoreKey) {
         super()
+        this.element.classList.add('equipment-grid')
         this.dataStoreKey = dataStoreKey;
         const [set, get] = DataStore.registerArrayProvider(this.dataStoreKey);
         this.setValue = set;
         this.getValue = get;
-        DataStore.registerAggregateSubscriber(this.dataStoreKey, (v)=> console.log("callback: " + v))
+        DataStore.registerAggregateSubscriber(this.dataStoreKey, (v) => console.log("callback: " + v))
     }
     render() {
         const dataGrid = this.getValue();
@@ -30,7 +31,7 @@ export default class EquipmentGrid extends Component {
         e.stopPropagation();
         this.setValue(
             e.target.dataset.index,
-            e.target.value
+            parseInt(e.target.value)
         )
     }
 }

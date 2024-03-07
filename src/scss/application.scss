@@ -1,4 +1,25 @@
 @use "variables.scss";
 html {
-    background-color: variables.$background-color;
+    background-color: variables.$surface-100;
+    color: variables.$font-color;
+}
+
+.equipment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 23%;
+    & > input {
+        width: calc(25% - 8px);
+        margin: 2px;
+        color: inherit;
+        background-color: variables.$surface-200;
+        border: none;
+        appearance:textfield;
+        text-align: center;
+        font-size: 2em;
+        &::-webkit-inner-spin-button,&::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
 }

@@ -1,3 +1,6 @@
 [submodule "src/js/lib/Nyzul"]
 	path = src/js/lib/Nyzul
 	url = git@github.com:ChristopherJTrent/Nyzul.git
+[submodule "src/js/lib/Storehouse"]
+	path = src/js/lib/Storehouse
+	url = git@github.com:ChristopherJTrent/Storehouse.git
