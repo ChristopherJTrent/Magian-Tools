@@ -1,5 +1,7 @@
-import { DataStore } from "./lib/Storehouse/stores";
+import { Nyzul } from "./lib/Nyzul/index.mjs";
 
-const [set, get] = DataStore.registerProvider('test');
-DataStore.registerSubscriber('test', (v) => console.log(v))
-for(let i = 0; i < 10; i++) { set(i) }
+const nyzul = new Nyzul();
+
+let p = document.createElement('p');
+p.innerText = 'hello, world! from Nyzul!'
+nyzul.appendChild(p)
