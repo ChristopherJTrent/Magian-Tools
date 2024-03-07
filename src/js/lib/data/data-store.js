@@ -1,9 +1,10 @@
 import { sum } from "./aggregators";
 import ArrayDataBlock from "./array-data-block";
-import DataBlock from "./datablock"
+import DataBlock from "./data-block"
+import EnumDataBlock from "./enum-data-block";
 
 export default class DataStore {
-    /** @type {Map<String, DataBlock} */
+    /** @type {Map<String, DataBlock>} */
     static storage = new Map()
 
     static registerProvider(key, startingValue = 0) {
@@ -11,12 +12,11 @@ export default class DataStore {
         return [
             (value) => {
                 DataStore.storage.get(key).setValue(value);
-                DataStore.storage.get(key).alertSubscribers();
             },
             () => DataStore.storage.get(key).value
         ]
     }
-    static registerAggregateProvider(key, startingValue = []) {
+    static registerArrayProvider(key, startingValue = []) {
         DataStore.storage.set(key, new ArrayDataBlock(startingValue));
         return [
             (index, value) => {
@@ -25,8 +25,14 @@ export default class DataStore {
                     arr[index] = value;
                     return arr;
                 })
-                DataStore.storage.get(key).alertSubscribers();
             },
+            () => DataStore.storage.get(key).value
+        ]
+    }
+    static registerEnumProvider(key, allowedValues, startingValue = allowedValues[0]) {
+        DataStore.storage.set(key, new EnumDataBlock(allowedValues, startingValue))
+        return [
+            (value) => DataStore.storage.get(key).setValue(value),
             () => DataStore.storage.get(key).value
         ]
     }
