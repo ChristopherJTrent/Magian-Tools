@@ -1,7 +1,7 @@
 import { sum } from "./aggregators";
 import DataBlock from "./data-block";
 /** @template T */
-export default class ArrayDataBlock extends DataBlock {
+export default  class ArrayDataBlock extends DataBlock {
 
     /**
      * 
