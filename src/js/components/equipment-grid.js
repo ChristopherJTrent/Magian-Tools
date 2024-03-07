@@ -9,6 +9,8 @@ export default class EquipmentGrid extends Component {
         const [set, get] = DataStore.registerArrayProvider(this.dataStoreKey);
         this.setValue = set;
         this.getValue = get;
+
+        this.element.id = `equipment-grid-${this.dataStoreKey}`;
         DataStore.registerAggregateSubscriber(this.dataStoreKey, (v) => console.log("callback: " + v))
     }
     render() {
