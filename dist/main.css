@@ -1,0 +1,27 @@
+/*!************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/scss/application.scss ***!
+  \************************************************************************************************************************************************/
+html {
+  background-color: #121212;
+  color: aliceblue;
+}
+
+.equipment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 23%;
+}
+.equipment-grid > input {
+  width: calc(25% - 8px);
+  margin: 2px;
+  color: inherit;
+  background-color: #282828;
+  border: none;
+  appearance: textfield;
+  text-align: center;
+  font-size: 2em;
+}
+.equipment-grid > input::-webkit-inner-spin-button, .equipment-grid > input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
