@@ -31,7 +31,7 @@ This project will be implemented with the following tools:
 - Core HTML visualization elements
 - Webpack and Babel for transpilation and bundling
 - NPM to manage project dependencies
-- [Jest](https://jestjs.io) for testing
+- A testing Framework (either Jasmine or Jest, pending discussion with PM)
 - [Trello](https://trello.com/b/V5stLJ8s/calc) for project management
 
 ## Implementation Timeline
