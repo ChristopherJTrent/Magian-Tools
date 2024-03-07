@@ -1,6 +1,6 @@
 
 # Magian Calc
-<img align="center" width="128" height="128" src="https://raw.githubusercontent.com/ChristopherJTrent/Magian-Calc/master/favicon.ico">  
+<p align="center"><img width="128" height="128" src="https://raw.githubusercontent.com/ChristopherJTrent/Magian-Calc/master/favicon.ico"></p>  
 
 ## Background
 
