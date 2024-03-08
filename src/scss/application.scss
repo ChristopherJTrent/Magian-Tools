@@ -29,6 +29,10 @@ html {
     display: flex;
 }
 
+.flex-break {
+    width: 100%;
+}
+
 #equipmentPanel {
     display:grid;
     grid-template-columns: repeat(2, calc(50% - 2.5vw));
