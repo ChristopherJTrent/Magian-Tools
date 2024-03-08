@@ -30,11 +30,15 @@ export default class EquipmentGrid extends Component {
         this.max = max;
         return this;
     }
+    formatLabel(prepend = ": ", append) {
+
+    }
     render() {
         const dataGrid = this.getValue();
-        this.appendComponent(
-            new ReactiveLabel(this.dataStoreKey, this.dataStoreKey.replace('-', ' '), true)
-                .withFormatting(": ", `%/${this.max}%`))
+        const label = new ReactiveLabel(this.dataStoreKey, this.dataStoreKey.replace('-', ' '), true)
+                          .withFormatting(": ", `%/${this.max}%`)
+        label.element.classList.add('equipPanelLabel');
+        this.appendComponent(label)
         this.appendComponent(new FlexBreak())
         for (let i = 0; i < 16; i++) {
             dataGrid.push(0);

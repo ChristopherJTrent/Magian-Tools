@@ -3,7 +3,7 @@ import { Storehouse } from "../lib/Storehouse/index.mjs";
 
 export default class ReactiveLabel extends Component {
     constructor(key, text, aggregate = false) {
-        super();
+        super(document.createElement('span'));
         this.element.innerText = text;
         this.storehouseKey = key;
         this.aggregate = aggregate;
@@ -11,7 +11,7 @@ export default class ReactiveLabel extends Component {
     }
     withFormatting(prepend, append) {
         this.formatting = {prepend: prepend, append: append }
-        return this;
+        return this;;
     } 
     render() {
         let reactive = document.createElement('span')
