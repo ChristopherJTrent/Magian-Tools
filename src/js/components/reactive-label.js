@@ -11,7 +11,7 @@ export default class ReactiveLabel extends Component {
     }
     withFormatting(prepend, append) {
         this.formatting = {prepend: prepend, append: append }
-        return this;;
+        return this;
     } 
     render() {
         let reactive = document.createElement('span')
@@ -34,7 +34,9 @@ export default class ReactiveLabel extends Component {
         return (value) => {
             const reactive = document.getElementById(id)
             const formatted = `${format.prepend ?? ""}${value}${format.append ?? ""}`
-            reactive.innerText = formatted
+            if (reactive) {
+                reactive.innerText = formatted
+            }
         }
     }
 }

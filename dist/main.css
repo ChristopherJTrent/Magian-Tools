@@ -6,13 +6,7 @@ html {
   color: aliceblue;
 }
 
-.equipment-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 2.5vw;
-  min-width: 20em;
-}
-.equipment-grid > input {
+input[type=number] {
   padding: 0.5em;
   width: calc(25% - 1.2em);
   margin: 2px;
@@ -24,9 +18,26 @@ html {
   font-size: 2em;
   border-radius: 10px;
 }
-.equipment-grid > input::-webkit-inner-spin-button, .equipment-grid > input::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.brand-icon {
+  padding: 3px;
+  height: 64px;
+}
+
+input.smallInput {
+  font-size: 1.2em;
+  width: 3em;
+}
+
+.equipment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2.5vw;
+  min-width: 20em;
 }
 
 .materialCard {
@@ -36,6 +47,26 @@ html {
 
 .flex-break {
   width: 100%;
+}
+
+.flexContainer {
+  display: flex;
+}
+.flexContainer.vertical {
+  flex-direction: column;
+}
+.flexContainer.vertical.center {
+  align-items: center;
+}
+
+.meterContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.meterContainer > meter {
+  width: 80%;
 }
 
 #equipmentPanel {
@@ -56,11 +87,6 @@ html {
 }
 
 @media (max-width: 1040px) {
-  #equipmentPanel {
-    grid-template-columns: 100%;
-  }
-}
-@media (orientation: portrait) {
   #equipmentPanel {
     width: 95%;
     margin-left: 2.5vw;

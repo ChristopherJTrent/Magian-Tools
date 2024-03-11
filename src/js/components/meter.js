@@ -1,6 +1,9 @@
+import FeedbackSidebar from "../layouts/feedback-sidebar.js";
 import { Component } from "../lib/Nyzul/index.mjs";
 import { sum } from "../lib/Storehouse/data/aggregators.js";
 import { Storehouse } from "../lib/Storehouse/index.mjs";
+import FlexBreak from "./flex-break.js";
+import ReactiveLabel from "./reactive-label.js";
 
 
 export default class Meter extends Component {
@@ -21,25 +24,54 @@ export default class Meter extends Component {
         this.aggregate = aggregate;
         this.label = label;
         this.key = key;
+        this.meter = document.createElement('meter');
+        this.element.classList.add('meterContainer')
+    }
+    min(val) {
+        this.meter.setAttribute('min', val)
+        return this
+    }
+    max(val) {
+        this.meter.setAttribute('max', val)
+        return this
+    }
+    low(val) {
+        this.meter.setAttribute('low', val)
+        return this
+    }
+    high(val) {
+        this.meter.setAttribute('high', val)
+        return this
+    }
+    optimum(val) {
+        this.meter.setAttribute('optimum', val)
+        return this
+    }
+    formatLabel(prepend, append) {
+        this.prepend = prepend
+        this.append = append
+        return this
     }
     render() {
-        const label = document.createElement('label')
-        label.setAttribute('for', `meter-${this.key}`)
-        label.innerText = this.label
-        this.appendChild(label)
-        const meter = document.createElement('meter');
-        meter.id = `meter-${this.key}`
-        this.registerConsumer(meter)
-        this.appendChild(meter)
+        const label = new ReactiveLabel(this.key, this.label, this.aggregate)
+                            .withFormatting(this.prepend ?? '', this.append ?? '')
+        this.appendComponent(label)
+        //this.appendComponent(new FlexBreak())
+        this.meter.id = `meter-${this.key}`
+        this.registerConsumer(this.meter)
+        Storehouse.storage.get(this.key).alertSubscribers();
+        this.appendChild(this.meter)
         return this.element;
     }
     registerConsumer(meter) {
         const _meterCallback = (value) => {
-            meter.setAttribute('value', value.toString())
+            meter.setAttribute('value', value?.toString())
         }
         if (this.useAggregation) {
+            ('using aggregation')
             Storehouse.registerAggregateSubscriber(this.key, _meterCallback, this.aggregate)
         } else {
+            ('not using aggregation')
             Storehouse.registerSubscriber(this.key, _meterCallback)
         }
     }

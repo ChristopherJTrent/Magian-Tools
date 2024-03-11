@@ -8,7 +8,18 @@ export default class FeedbackSidebar extends Component {
         this.element.classList.add("materialCard");
     }
     render() {
-        this.appendComponent(new Meter('Equipment Haste', 'haste'))
+        this.appendComponent(new Meter('Equipment Haste', 'haste', 
+                                        FeedbackSidebar.hasteAggregator)
+                                    .min(0)
+                                    .low(250)
+                                    .optimum(256)
+                                    .high(260)
+                                    .max(300)
+                                    .formatLabel(': ', '/256'))
         return this.element
+    }
+    static hasteAggregator(values) {
+        ("hasteAg")
+        return values.reduce((a, e) => a + (e * 10))
     }
 }

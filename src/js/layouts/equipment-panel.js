@@ -1,5 +1,8 @@
+import DelayInput from "../components/delay-input.js";
 import EquipmentGrid from "../components/equipment-grid.js";
+import FlexBreak from "../components/flex-break.js";
 import Component from "../lib/Nyzul/engine/component.js";
+import { EQUIP_HASTE_MAX, EQUIP_HASTE_MIN, EQUIP_HASTE_MIN_OVERALL } from "../util/constants.js";
 
 export default class EquipmentPanel extends Component {
     constructor() { 
@@ -8,15 +11,22 @@ export default class EquipmentPanel extends Component {
         this.element.classList.add('materialCard');
     }
     render() {
+
+        this.appendComponent(new DelayInput())
+        this.appendComponent(new FlexBreak())
         this.appendComponent(new EquipmentGrid('haste')
-                                .fieldMinimum(-5)
-                                .fieldMaximum(26)
-                                .overallMinMax(-25, 26));
-        this.appendComponent(new EquipmentGrid('store-tp'));
-        this.appendComponent(new EquipmentGrid('dual-wield'))
-        this.appendComponent(new EquipmentGrid('double-attack'))
-        this.appendComponent(new EquipmentGrid('triple-attack'))
-        this.appendComponent(new EquipmentGrid('quadruple-attack'))
+                                .fieldMinimum(EQUIP_HASTE_MIN)
+                                .fieldMaximum(EQUIP_HASTE_MAX)
+                                .overallMinMax(EQUIP_HASTE_MIN_OVERALL, 
+                                    EQUIP_HASTE_MAX));
+        
+        this.appendComponent(new EquipmentGrid('store-tp')
+                                .formatLabel(undefined, ''));
+        //TODO: get the project to a point where these lines can be uncommented
+        // this.appendComponent(new EquipmentGrid('dual-wield'))
+        // this.appendComponent(new EquipmentGrid('double-attack'))
+        // this.appendComponent(new EquipmentGrid('triple-attack'))
+        // this.appendComponent(new EquipmentGrid('quadruple-attack'))
         return this.element;
     }
 }

@@ -4,27 +4,38 @@ html {
     color: variables.$font-color;
 }
 
+input[type=number]{
+    padding: 0.5em;
+    width: calc(25% - 1.2em);
+    margin: 2px;
+    color: inherit;
+    background-color: variables.$surface-300;
+    border: none;
+    appearance:textfield;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 10px;
+    &::-webkit-inner-spin-button,&::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.brand-icon {
+    padding: 3px;
+    height: 64px;
+}
+
+input.smallInput {
+    font-size: 1.2em;
+    width: 3em;
+}
+
 .equipment-grid {
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.5vw;
     min-width: 20em;
-    & > input {
-        padding: 0.5em;
-        width: calc(25% - 1.2em);
-        margin: 2px;
-        color: inherit;
-        background-color: variables.$surface-300;
-        border: none;
-        appearance:textfield;
-        text-align: center;
-        font-size: 2em;
-        border-radius: 10px;
-        &::-webkit-inner-spin-button,&::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-    }
 }
 
 .materialCard {
@@ -35,6 +46,27 @@ html {
 .flex-break {
     width: 100%;
 }
+
+.flexContainer {
+    display: flex;
+    &.vertical {
+        flex-direction: column;
+        &.center {
+            align-items: center;
+        }
+    }
+}
+
+.meterContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > meter{
+        width: 80%;
+    }
+}
+
 
 #equipmentPanel {
     display:grid;

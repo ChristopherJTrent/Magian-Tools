@@ -1,4 +1,6 @@
 import { Component } from "../lib/Nyzul/index.mjs";
+import { Storehouse } from "../lib/Storehouse/index.mjs";
+import { tpPerHit } from "../util/TP.js";
 import EquipmentPanel from "./equipment-panel.js";
 
 export default class InputPanel extends Component {
@@ -9,6 +11,18 @@ export default class InputPanel extends Component {
     }
     render() {
         this.appendComponent(new EquipmentPanel());
+        this.afterRender();
         return this.element
+    }
+    afterRender() {
+        Storehouse.registerCombinatorProvider('tp-per-hit', [
+            {
+                key: 'delay-mh'
+            },
+            {
+                key: 'store-tp'
+            }
+        ], (args) => tpPerHit(...args))
+        Storehouse.registerSubscriber('tp-per-hit', (v) => console.log(v))
     }
 }
