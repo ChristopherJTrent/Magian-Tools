@@ -7,6 +7,7 @@ export default class Header extends Component {
     constructor() { 
         super() 
         this.element.id = 'header'
+        this.element.classList.add('flexContainer', 'horizontal', 'center')
     }
     render() {
         const icon = document.createElement('img')
@@ -14,10 +15,18 @@ export default class Header extends Component {
         icon.classList.add('brand-icon');
         this.element.appendChild(icon)
 
+        const title = document.createElement('p')
+        title.classList.add('title-text')
+        title.innerText = 'Magian Calc'
+        this.appendChild(title);
+
+        const socials = document.createElement('span')
+        socials.classList.add('flexRight', 'socials')
+        socials.appendChild(this.linkedin())
+        socials.appendChild(this.github())
+        this.appendChild(socials)
         
-
-        return this.element
-
+        return this.finalize();
     }
     linkedin() {
         const linkedin = document.createElement('a')
@@ -27,7 +36,7 @@ export default class Header extends Component {
         linkedin.appendChild(linkedinSymbol);
         return linkedin
     }
-    linkedin() {
+    github() {
         const github = document.createElement('a')
         const githubSymbol = document.createElement('i')
         githubSymbol.classList.add('fa-brands', 'fa-github')

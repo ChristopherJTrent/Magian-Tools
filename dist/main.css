@@ -55,8 +55,14 @@ input.smallInput {
 .flexContainer.vertical {
   flex-direction: column;
 }
-.flexContainer.vertical.center {
+.flexContainer.horizontal {
+  flex-direction: row;
+}
+.flexContainer.center {
   align-items: center;
+}
+.flexContainer > .flexRight {
+  margin-left: auto;
 }
 
 .meterContainer {
@@ -69,7 +75,24 @@ input.smallInput {
   width: 80%;
 }
 
+.socials {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.socials > a {
+  height: 3em;
+}
+.socials .fa-brands {
+  font-size: 3em;
+  padding-right: 0.2em;
+  color: aliceblue;
+}
+
 #equipmentPanel {
+  margin-top: 75px;
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 2.5vw));
   width: 66vw;
@@ -82,8 +105,26 @@ input.smallInput {
   height: calc(100vh - 40px);
   position: fixed;
   right: 0px;
-  top: 5px;
+  top: 75px;
   border-radius: 2% 0 0 2%;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 5px;
+  width: calc(100vw - 10px);
+  background-color: #282828;
+}
+#header > a {
+  text-decoration: none;
+  color: inherit;
+}
+#header > a:link {
+  color: inherit;
+}
+#header > a:visited {
+  color: inherit;
 }
 
 @media (max-width: 1040px) {

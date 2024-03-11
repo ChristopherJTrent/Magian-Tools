@@ -51,9 +51,15 @@ input.smallInput {
     display: flex;
     &.vertical {
         flex-direction: column;
-        &.center {
-            align-items: center;
-        }
+    }
+    &.horizontal {
+        flex-direction: row;
+    }
+    &.center {
+        align-items: center;
+    }
+    & > .flexRight {
+        margin-left: auto;
     }
 }
 
@@ -67,8 +73,26 @@ input.smallInput {
     }
 }
 
+.socials {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+    & > a{
+        height: 3em;
+    }
+    & .fa-brands {
+        font-size: 3em;
+        padding-right: .2em;
+        color: aliceblue;
+    }
+}
+
 
 #equipmentPanel {
+    margin-top: 75px;
     display:grid;
     grid-template-columns: repeat(2, calc(50% - 2.5vw));
     width: 66vw;
@@ -80,8 +104,26 @@ input.smallInput {
     height: calc(100vh - 40px);
     position: fixed;
     right: 0px;
-    top: 5px;
+    top: 75px;
     border-radius: 2% 0 0 2%;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 5px;
+    width: calc(100vw - 10px);
+    background-color: variables.$surface-200;
+    & > a {
+        text-decoration: none;
+        color: inherit;
+        &:link {
+            color:inherit;
+        }
+        &:visited {
+            color:inherit;
+        }
+    }
 }
 
 @media (max-width: 1040px) {
