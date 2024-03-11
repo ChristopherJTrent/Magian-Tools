@@ -7,7 +7,7 @@
  */
 export function tpPerHit(modifiedDelay, storeTp) {
     //this function will be full of magic numbers. nothing to be done about it.
-    total = 0
+    let total = 0
     if (modifiedDelay < 180) {
         total = 61 + (((modifiedDelay - 180) * 63) / 360)
     } else if (modifiedDelay < 541) {

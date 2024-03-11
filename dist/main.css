@@ -69,6 +69,10 @@ input.smallInput {
 .flexContainer > .flexRight {
   margin-left: auto;
 }
+.flexContainer hr {
+  width: 95%;
+  border-radius: 2px;
+}
 
 .meterContainer {
   width: 100%;

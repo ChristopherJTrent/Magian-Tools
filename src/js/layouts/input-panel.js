@@ -23,6 +23,6 @@ export default class InputPanel extends Component {
                 key: 'store-tp'
             }
         ], (args) => tpPerHit(...args))
-        Storehouse.registerSubscriber('tp-per-hit', (v) => console.log(v))
+        Storehouse.registerAggregateSubscriber('tp-per-hit', (v) => (v))
     }
 }
