@@ -53,6 +53,8 @@ input.smallInput {
         bottom: 4px;
         left: 7px;
         font-size: .8em;
+        user-select: none;
+        pointer-events: none;
     }
     & .iblock {
         width: 25%;
@@ -66,6 +68,7 @@ input.smallInput {
 
 .materialCard {
     padding-top: 5px;
+    padding-bottom: 5px;
     margin-left: 5px;
     border-radius: 5px;
     background-color: variables.$surface-200;
@@ -147,6 +150,7 @@ input.smallInput {
     left: 5px;
     width: calc(100vw - 10px);
     background-color: variables.$surface-200;
+    z-index: 999;
     & > a {
         text-decoration: none;
         color: inherit;
@@ -160,6 +164,11 @@ input.smallInput {
 }
 
 @media (max-width: 1040px) {
+    #header {
+        width: 100vw;
+        margin: 0;
+        left: 0;
+    }
     #equipmentPanel {
         width: 95%;
         margin-left: 2.5vw;
@@ -167,6 +176,10 @@ input.smallInput {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        & .equipment-grid {
+            margin: 0;
+            padding: 5px;
+        }
     }
     #feedbackSidebar {
         width: 95%;
