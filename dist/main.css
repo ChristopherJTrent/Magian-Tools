@@ -134,7 +134,7 @@ input.smallInput {
   margin-top: 75px;
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 2.5vw));
-  width: 66vw;
+  width: 67.9vw;
 }
 
 #feedbackSidebar {
@@ -155,6 +155,7 @@ input.smallInput {
   width: calc(100vw - 10px);
   background-color: #282828;
   z-index: 999;
+  border-radius: 0px 0px 5px 5px;
 }
 #header > a {
   text-decoration: none;
