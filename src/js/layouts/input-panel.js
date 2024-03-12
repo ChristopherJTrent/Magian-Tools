@@ -1,6 +1,7 @@
 import { Component } from "../lib/Nyzul/index.mjs";
 import { Storehouse } from "../lib/Storehouse/index.mjs";
 import { tpPerHit } from "../util/TP.js";
+import { calculateDelay } from "../util/haste.js";
 import EquipmentPanel from "./equipment-panel.js";
 
 export default class InputPanel extends Component {

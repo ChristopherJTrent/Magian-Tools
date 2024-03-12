@@ -155,6 +155,9 @@ input.smallInput {
     right: 0px;
     top: 75px;
     border-radius: 5px 0 0 5px;
+    & div {
+        margin-bottom: 5px;
+    }
 }
 
 #header {

@@ -53,6 +53,8 @@ export default class EquipmentGrid extends Component {
             let box = document.createElement('input')
             box.setAttribute('type', 'number');
             box.setAttribute('data-index', `${i}`)
+            if (this.fieldMinVal) box.setAttribute('min', this.fieldMinVal)
+            if (this.fieldMaxVal) box.setAttribute('max', this.fieldMaxVal)
             box.addEventListener('input', this.updateListeners.bind(this))
             container.appendChild(box)
             container.appendChild(document.createElement('br'))

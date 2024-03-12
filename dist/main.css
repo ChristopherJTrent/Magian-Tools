@@ -162,6 +162,9 @@ input.smallInput {
   top: 75px;
   border-radius: 5px 0 0 5px;
 }
+#feedbackSidebar div {
+  margin-bottom: 5px;
+}
 
 #header {
   position: fixed;
