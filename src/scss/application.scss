@@ -126,6 +126,10 @@ input.smallInput {
     }
 }
 
+.sectionTitle {
+    font-size: 2em;
+}
+
 .flexCenter {
     margin-left: auto;
     margin-right: auto;
@@ -140,12 +144,18 @@ input.smallInput {
     font-family: inherit;
 }
 
-#equipmentPanel {
-    margin-top: 75px;
-    display:grid;
-    grid-template-columns: repeat(2, calc(50% - 2.5vw));
-    width: 67.9vw;
+#inputPanel {
+    & > .materialCard {
+        display:grid;
+        grid-template-columns: repeat(2, calc(50% - 2.5vw));
+        width: calc(70vw - 40px);
+        margin-top: 5px;
+        &:first-of-type {
+            margin-top: 75px;
+        }
+    }
 }
+
 #feedbackSidebar {
     display: flex;
     width: 30vw;
@@ -167,6 +177,7 @@ input.smallInput {
     width: calc(100vw - 10px);
     background-color: variables.$surface-200;
     z-index: 998;
+    border-bottom: 5px solid variables.$surface-100;
     border-radius: 0px 0px 5px 5px;
     & > a {
         text-decoration: none;
@@ -197,11 +208,11 @@ input.smallInput {
     & .materialCard {
         flex-direction: column;
         width: 40vw;
-        height: 30vh;
+        height: min-content;
         padding: 5px;
         & .styledButton {
             margin:0px;
-            width: 10%;
+            width: min-content;
             margin-left: auto;
             margin-right: 5px;
             margin-bottom: 5px;
@@ -227,13 +238,19 @@ input.smallInput {
         margin: 0;
         left: 0;
     }
-    #equipmentPanel {
+    #inputPanel {
         width: 95%;
         margin-left: 2.5vw;
         padding-bottom: 11px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        & > #equipmentPanel {
+            grid-template-columns: auto;
+        }
+        & .materialCard {
+            width: 100%;
+        }
         & .equipment-grid {
             margin: 0;
             padding: 5px;
@@ -244,5 +261,13 @@ input.smallInput {
         position:relative;
         border-radius: 0;
         height: auto;
+    }
+    #about-modal {
+        & .materialCard {
+            width: 80%;
+        }
+    }
+    .styledButton {
+        margin-left: 0px;
     }
 }
