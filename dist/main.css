@@ -11,6 +11,10 @@ html {
   font-family: "Julius Sans One", sans-serif;
 }
 
+.iblock {
+  display: inline-block;
+}
+
 input[type=number] {
   padding: 0.5em;
   width: calc(25% - 1.2em);
@@ -26,6 +30,11 @@ input[type=number] {
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.title-text {
+  font-size: 1.5em;
+  font-weight: bolder;
 }
 
 .brand-icon {
@@ -44,8 +53,26 @@ input.smallInput {
   margin-left: 2.5vw;
   min-width: 20em;
 }
+.equipment-grid .label {
+  position: absolute;
+  z-index: 2;
+  bottom: 4px;
+  left: 7px;
+  font-size: 0.8em;
+}
+.equipment-grid .iblock {
+  width: 25%;
+  position: relative;
+  z-index: 1;
+}
+.equipment-grid input[type=number] {
+  width: calc(100% - 37px);
+}
 
 .materialCard {
+  padding-top: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
   background-color: #282828;
   display: flex;
 }
@@ -111,11 +138,11 @@ input.smallInput {
   display: flex;
   width: 30vw;
   padding: 15px;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 110px);
   position: fixed;
   right: 0px;
   top: 75px;
-  border-radius: 2% 0 0 2%;
+  border-radius: 5px 0 0 5px;
 }
 
 #header {

@@ -4,6 +4,10 @@ import FlexBreak from "./flex-break.js";
 import ReactiveLabel from "./reactive-label.js";
 
 export default class EquipmentGrid extends Component {
+    static SLOTS = ['Main Hand', 'Off-Hand', 'Ranged', 'Ammo', 
+             'Head',      'Neck',     'Ear 1',  'Ear 2', 
+             'Body',      'Hands',    'Ring 1', 'Ring 2', 
+             'Back',      'Waist',    'Legs',   'Feet']
     /**
      * 
      * @param {String} dataStoreKey 
@@ -43,12 +47,20 @@ export default class EquipmentGrid extends Component {
         this.appendComponent(label)
         this.appendComponent(new FlexBreak())
         for (let i = 0; i < 16; i++) {
+            const container = document.createElement('span')
+            container.classList.add('iblock')
             dataGrid.push(0);
             let box = document.createElement('input')
             box.setAttribute('type', 'number');
             box.setAttribute('data-index', `${i}`)
             box.addEventListener('input', this.updateListeners.bind(this))
-            this.appendChild(box)
+            container.appendChild(box)
+            container.appendChild(document.createElement('br'))
+            const label = document.createElement('span')
+            label.classList.add('label')
+            label.innerText = EquipmentGrid.SLOTS[i]
+            container.appendChild(label)
+            this.appendChild(container)
         }
         setTimeout(() => Storehouse.forceUpdate(this.dataStoreKey), 1)
         return this.element;

@@ -5,6 +5,10 @@ html {
     font-family: variables.$font-family;
 }
 
+.iblock {
+    display: inline-block;
+}
+
 input[type=number]{
     padding: 0.5em;
     width: calc(25% - 1.2em);
@@ -22,6 +26,11 @@ input[type=number]{
     }
 }
 
+.title-text {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
 .brand-icon {
     padding: 3px;
     height: 64px;
@@ -33,13 +42,32 @@ input.smallInput {
 }
 
 .equipment-grid {
+    
     display: flex;
     flex-wrap: wrap;
     margin-left: 2.5vw;
     min-width: 20em;
+    & .label {
+        position:absolute;
+        z-index: 2;
+        bottom: 4px;
+        left: 7px;
+        font-size: .8em;
+    }
+    & .iblock {
+        width: 25%;
+        position:relative;
+        z-index: 1;
+    }
+    & input[type=number] {
+        width: calc(100% - 37px);
+    }
 }
 
 .materialCard {
+    padding-top: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
     background-color: variables.$surface-200;
     display: flex;
 }
@@ -106,11 +134,11 @@ input.smallInput {
     display: flex;
     width: 30vw;
     padding: 15px;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 110px);
     position: fixed;
     right: 0px;
     top: 75px;
-    border-radius: 2% 0 0 2%;
+    border-radius: 5px 0 0 5px;
 }
 
 #header {

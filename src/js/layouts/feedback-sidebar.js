@@ -23,8 +23,13 @@ export default class FeedbackSidebar extends Component {
                                     .formatLabel(': ', '/256'))
         return this.element
     }
+    /**
+     * 
+     * @param {number[]} values 
+     * @returns 
+     */
     static hasteAggregator(values) {
         ("hasteAg")
-        return values.reduce((a, e) => a + (e * 10))
+        return values.reduce((a, e) => a + (e * 10),0)
     }
 }
