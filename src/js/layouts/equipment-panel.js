@@ -13,7 +13,11 @@ export default class EquipmentPanel extends Component {
         this.element.classList.add('materialCard');
     }
     render() {
-
+        const title = document.createElement('h1')
+        title.classList.add('sectionTitle')
+        title.innerText = 'Equipment'
+        this.appendChild(title)
+        this.appendComponent(new FlexBreak())
         this.appendComponent(new DelayInput())
         this.appendComponent(new FlexBreak())
         this.appendComponent(new EquipmentGrid('haste')
