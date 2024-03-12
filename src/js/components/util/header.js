@@ -1,4 +1,4 @@
-import { Component } from "../lib/Nyzul/index.mjs";
+import { Component } from "../../lib/Nyzul/index.mjs";
 
 
 export default class Header extends Component {

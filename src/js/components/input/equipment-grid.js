@@ -1,7 +1,7 @@
-import { Component } from "../lib/Nyzul/index.mjs";
-import {Storehouse} from '../lib/Storehouse/index.mjs';
-import FlexBreak from "./flex-break.js";
-import ReactiveLabel from "./reactive-label.js";
+import { Component } from "../../lib/Nyzul/index.mjs";
+import {Storehouse} from '../../lib/Storehouse/index.mjs';
+import FlexBreak from "../util/flex-break.js";
+import ReactiveLabel from "../util/reactive-label.js";
 
 export default class EquipmentGrid extends Component {
     static SLOTS = ['Main Hand', 'Off-Hand', 'Ranged', 'Ammo', 

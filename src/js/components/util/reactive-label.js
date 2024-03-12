@@ -1,5 +1,5 @@
-import { Component, generateUEID } from "../lib/Nyzul/index.mjs";
-import { Storehouse } from "../lib/Storehouse/index.mjs";
+import { Component, generateUEID } from "../../lib/Nyzul/index.mjs";
+import { Storehouse } from "../../lib/Storehouse/index.mjs";
 
 export default class ReactiveLabel extends Component {
     constructor(key, text, aggregate = false) {

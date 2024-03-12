@@ -1,6 +1,6 @@
-import { Component, generateUEID } from "../lib/Nyzul/index.mjs";
-import { tpPerHit } from "../util/TP.js";
-import ReactiveLabel from "./reactive-label.js";
+import { Component, generateUEID } from "../../lib/Nyzul/index.mjs";
+import { tpPerHit } from "../../util/TP.js";
+import ReactiveLabel from "../util/reactive-label.js";
 
 
 export default class TpDisplay extends Component {

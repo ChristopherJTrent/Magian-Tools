@@ -1,7 +1,7 @@
-import FeedbackSidebar from "../layouts/feedback-sidebar.js";
-import { Component } from "../lib/Nyzul/index.mjs";
-import { sum } from "../lib/Storehouse/data/aggregators.js";
-import { Storehouse } from "../lib/Storehouse/index.mjs";
+import FeedbackSidebar from "../../layouts/feedback-sidebar.js";
+import { Component } from "../../lib/Nyzul/index.mjs";
+import { sum } from "../../lib/Storehouse/data/aggregators.js";
+import { Storehouse } from "../../lib/Storehouse/index.mjs";
 import FlexBreak from "./flex-break.js";
 import ReactiveLabel from "./reactive-label.js";
 
