@@ -1,6 +1,6 @@
-import DelayInput from "../components/delay-input.js";
-import EquipmentGrid from "../components/equipment-grid.js";
-import FlexBreak from "../components/flex-break.js";
+import DelayInput from "../components/input/delay-input.js";
+import EquipmentGrid from "../components/input/equipment-grid.js";
+import FlexBreak from "../components/util/flex-break.js";
 import Component from "../lib/Nyzul/engine/component.js";
 import { EQUIP_HASTE_MAX, EQUIP_HASTE_MIN, EQUIP_HASTE_MIN_OVERALL } from "../util/constants.js";
 

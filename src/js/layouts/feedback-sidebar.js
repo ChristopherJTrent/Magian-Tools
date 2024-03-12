@@ -30,6 +30,6 @@ export default class FeedbackSidebar extends Component {
      */
     static hasteAggregator(values) {
         ("hasteAg")
-        return values.reduce((a, e) => a + (e * 10),0)
+        return values.reduce((a, e) => a + (e * 10))
     }
 }
