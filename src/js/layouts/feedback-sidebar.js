@@ -9,6 +9,7 @@ export default class FeedbackSidebar extends Component {
         this.element.classList.add("flexContainer", 'vertical', 'center', 'materialCard');
     }
     render() {
+        
         this.appendComponent(new TpDisplay())
 
         this.appendChild(document.createElement('hr'))

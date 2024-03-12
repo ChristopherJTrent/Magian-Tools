@@ -20,6 +20,18 @@ export default class Header extends Component {
         title.innerText = 'Magian Calc'
         this.appendChild(title);
 
+        const about = document.createElement('span')
+        about.classList.add('flexCenter')
+        
+        const aboutButton = document.createElement('button')
+        aboutButton.addEventListener('click', Header.aboutModalHandler)
+        aboutButton.setAttribute('value', 'About this tool')
+        aboutButton.innerText = 'About this tool'
+        aboutButton.classList.add('styledButton')
+        about.appendChild(aboutButton)
+        this.appendChild(about)
+
+
         const socials = document.createElement('span')
         socials.classList.add('flexRight', 'socials')
         socials.appendChild(this.linkedin())
@@ -43,5 +55,14 @@ export default class Header extends Component {
         github.setAttribute('href', this.GITHUB_URL)
         github.appendChild(githubSymbol);
         return github
+    }
+    /**
+     * 
+     * @param {MouseEvent} e 
+     */
+    static aboutModalHandler(e) {
+        e.stopPropagation()
+        const modal = document.getElementById('about-modal')
+        modal.classList.add('active')
     }
 }

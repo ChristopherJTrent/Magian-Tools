@@ -130,6 +130,21 @@ input.smallInput {
   color: aliceblue;
 }
 
+.flexCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.styledButton {
+  background-color: #3f3f3f;
+  border: none;
+  margin-left: 103px;
+  padding: 10px;
+  border-radius: 5px;
+  color: inherit;
+  font-family: inherit;
+}
+
 #equipmentPanel {
   margin-top: 75px;
   display: grid;
@@ -154,7 +169,7 @@ input.smallInput {
   left: 5px;
   width: calc(100vw - 10px);
   background-color: #282828;
-  z-index: 999;
+  z-index: 998;
   border-radius: 0px 0px 5px 5px;
 }
 #header > a {
@@ -166,6 +181,47 @@ input.smallInput {
 }
 #header > a:visited {
   color: inherit;
+}
+
+#about-modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background-color: rgba(100, 100, 100, 0.5);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+#about-modal .materialCard {
+  flex-direction: column;
+  width: 40vw;
+  height: 30vh;
+  padding: 5px;
+}
+#about-modal .materialCard .styledButton {
+  margin: 0px;
+  width: 10%;
+  margin-left: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+#about-modal .title-text {
+  width: min-content;
+  height: min-content;
+}
+#about-modal .titlebar {
+  margin-bottom: 5px;
+}
+#about-modal.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 @media (max-width: 1040px) {

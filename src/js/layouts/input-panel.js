@@ -24,5 +24,18 @@ export default class InputPanel extends Component {
             }
         ], (args) => tpPerHit(...args))
         Storehouse.registerAggregateSubscriber('tp-per-hit', (v) => (v))
+    
+        // this will include magic and job ability haste later.
+        Storehouse.registerCombinatorProvider('modified-delay', [
+            {
+                key: 'delay-mh',
+            },
+            {
+                key: 'haste',
+                aggregator: (values) => {
+                    return Math.min(values.reduce((a, e) => a + e * 10, 0), 256)
+                }
+            }
+        ], (vals) => calculateDelay(...vals))
     }
 }
