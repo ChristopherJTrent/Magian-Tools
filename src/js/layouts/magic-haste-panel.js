@@ -8,7 +8,7 @@ export default class MagicHastePanel extends Component {
 
     constructor() {
         super();
-        this.element.classList.add('materialCard')
+        this.element.classList.add('materialCard', 'flexContainer', 'spaceAround')
     }
 
     render() {

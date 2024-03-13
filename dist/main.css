@@ -15,6 +15,33 @@ html {
   display: inline-block;
 }
 
+fieldset {
+  border: 1px solid #8b8b8b;
+  padding-left: 5px;
+  padding-right: 2em;
+}
+fieldset > label {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+fieldset > label > input[type=radio], fieldset > label input[type=checkbox] {
+  margin: 0;
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.25em solid #8b8b8b;
+  background-color: #8b8b8b;
+  margin-right: 5px;
+}
+fieldset > label > input[type=radio] {
+  border-radius: 50%;
+}
+fieldset > label > input:checked {
+  background-color: #3f3f3f;
+}
+
 input[type=number] {
   padding: 0.5em;
   width: calc(25% - 1.2em);
@@ -96,6 +123,9 @@ input.smallInput {
 .flexContainer.center {
   align-items: center;
 }
+.flexContainer.spaceAround {
+  justify-content: space-around;
+}
 .flexContainer > .flexRight {
   margin-left: auto;
 }
@@ -150,10 +180,12 @@ input.smallInput {
 }
 
 #inputPanel > .materialCard {
-  display: grid;
-  grid-template-columns: repeat(2, calc(50% - 2.5vw));
   width: calc(70vw - 40px);
   margin-top: 5px;
+}
+#inputPanel > .materialCard:not(.flexContainer) {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 2.5vw));
 }
 #inputPanel > .materialCard:first-of-type {
   margin-top: 75px;
