@@ -23,15 +23,19 @@ fieldset{
             appearance: none;
             width: 1.5em;
             height: 1.5em;
-            border: 0.25em solid variables.$surface-600;
-            background-color: variables.$surface-600;
+            border-width: 0.75em;
+            border-style: solid;
+            border-color: variables.$surface-600;
+            background-color: variables.$surface-300;
             margin-right: 5px;
+            transition: border-width 0.1s linear; 
         }
         & > input[type=radio] {
             border-radius: 50%;
         }
         & > input:checked {
-            background-color: variables.$surface-300;
+            border-width: 0.25em;
+            transform: border-width 0.1s linear;
         }
     }
 }

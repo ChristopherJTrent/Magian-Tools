@@ -31,15 +31,19 @@ fieldset > label > input[type=radio], fieldset > label input[type=checkbox] {
   appearance: none;
   width: 1.5em;
   height: 1.5em;
-  border: 0.25em solid #8b8b8b;
-  background-color: #8b8b8b;
+  border-width: 0.75em;
+  border-style: solid;
+  border-color: #8b8b8b;
+  background-color: #3f3f3f;
   margin-right: 5px;
+  transition: border-width 0.1s linear;
 }
 fieldset > label > input[type=radio] {
   border-radius: 50%;
 }
 fieldset > label > input:checked {
-  background-color: #3f3f3f;
+  border-width: 0.25em;
+  transform: border-width 0.1s linear;
 }
 
 input[type=number] {
