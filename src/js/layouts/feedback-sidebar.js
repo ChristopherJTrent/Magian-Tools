@@ -27,7 +27,7 @@ export default class FeedbackSidebar extends Component {
         this.appendComponent(new Meter('Magical Haste', 'total-magic-haste')
                                  .min(0)
                                  .low(350)
-                                 .high(400)
+                                 .high(430)
                                  .optimum(448)
                                  .max(600)
                                  .formatLabel(': ', '/448'))
