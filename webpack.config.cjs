@@ -2,6 +2,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require("path")
 
 const config = {
+    resolve: {
+        extensions: ['.js', '.mjs']
+    },
     entry: [
         path.resolve(__dirname, 'src', 'js', 'index.js'),
         path.resolve(__dirname, 'src', 'scss', 'application.scss')
