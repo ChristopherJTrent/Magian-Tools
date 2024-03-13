@@ -43,7 +43,7 @@ fieldset > label > input[type=radio] {
 }
 fieldset > label > input:checked {
   border-width: 0.25em;
-  transform: border-width 0.1s linear;
+  transition: border-width 0.1s linear;
 }
 
 input[type=number] {
