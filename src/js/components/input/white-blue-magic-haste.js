@@ -54,7 +54,7 @@ export default class WhiteBlueMagicHaste extends Component {
         this.mightyGuardCallback= this.mightyGuard.bind(this)
 
         this.element.classList.add('flexContainer', 'vertical');
-        [this.setProvider, this.getProvider] = Storehouse.registerArrayProvider('wb-magic-haste')
+        [this.setProvider, this.getProvider] = Storehouse.registerArrayProvider('wb-magic-haste', [0,0,0])
     }
     render() {
         const containingBlock = document.createElement('div')
@@ -66,6 +66,7 @@ export default class WhiteBlueMagicHaste extends Component {
             </label>`
             setTimeout(() => document.getElementById(def.id).addEventListener('input', this.eventCallback), 10)
         }
+        this.setProvider(0,0)
         this.appendChild(document.createElement('hr'))
         const mightyGuard = document.createElement('label')
         mightyGuard.setAttribute('for', 'mightyGuard')
@@ -78,7 +79,7 @@ export default class WhiteBlueMagicHaste extends Component {
         mightyGuard.innerHTML += '\nMighty Guard'
         setTimeout(() => document.getElementById('mightyGuard').addEventListener('input', this.mightyGuardCallback))
         this.appendChild(mightyGuard)
-
+        this.setProvider(1, 0)
         const embrava = document.createElement('label')
         embrava.setAttribute('for', 'embrava')
         const embravaCheckbox = document.createElement('input')
@@ -89,6 +90,7 @@ export default class WhiteBlueMagicHaste extends Component {
         embrava.innerHTML += '\n Embrava'
         setTimeout(() => document.getElementById('embrava').addEventListener('input', this.embravaCallback))
         this.appendChild(embrava)
+        this.setProvider(2, 0)
         return this.finalize();
     }
     /**
@@ -97,8 +99,7 @@ export default class WhiteBlueMagicHaste extends Component {
      */
     handleInputEvent(e) {
         e.stopPropagation()
-        console.log('input')
-        this.setProvider(0, e.target.value)
+        this.setProvider(0, parseInt(e.target.value))
     }
     embrava(e) {
         e.stopPropagation()

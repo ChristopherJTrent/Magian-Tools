@@ -24,6 +24,13 @@ export default class FeedbackSidebar extends Component {
                                     .high(260)
                                     .max(300)
                                     .formatLabel(': ', '/256'))
+        this.appendComponent(new Meter('Magical Haste', 'total-magic-haste')
+                                 .min(0)
+                                 .low(350)
+                                 .high(400)
+                                 .optimum(448)
+                                 .max(600)
+                                 .formatLabel(': ', '/448'))
         return this.element
     }
     /**
@@ -32,7 +39,6 @@ export default class FeedbackSidebar extends Component {
      * @returns 
      */
     static hasteAggregator(values) {
-        ("hasteAg")
         return values.reduce((a, e) => a + (e * 10), 0)
     }
 }

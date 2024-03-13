@@ -26,6 +26,7 @@ export default class ReactiveLabel extends Component {
         } else {
             Storehouse.registerSubscriber(this.storehouseKey, this.getUpdater())
         }
+        setTimeout(() => Storehouse.forceUpdate(this.storehouseKey), 5)
         return this.element;
     }
     getUpdater() {
