@@ -3,6 +3,7 @@ import { Storehouse } from "../lib/Storehouse/index.mjs";
 import { tpPerHit } from "../util/TP.js";
 import { calculateDelay } from "../util/haste.js";
 import EquipmentPanel from "./equipment-panel.js";
+import MagicHastePanel from "./magic-haste-panel.js";
 
 export default class InputPanel extends Component {
     constructor() {
@@ -12,6 +13,7 @@ export default class InputPanel extends Component {
     }
     render() {
         this.appendComponent(new EquipmentPanel());
+        this.appendComponent(new MagicHastePanel())
         this.afterRender();
         return this.element
     }

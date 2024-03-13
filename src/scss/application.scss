@@ -9,6 +9,37 @@ html {
     display: inline-block;
 }
 
+fieldset{
+    border: 1px solid variables.$surface-600;
+    padding-left: 5px;
+    padding-right: 2em;
+    & > label {
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        & > input[type=radio], input[type=checkbox] {
+            margin: 0;
+            appearance: none;
+            width: 1.5em;
+            height: 1.5em;
+            border-width: 0.75em;
+            border-style: solid;
+            border-color: variables.$surface-600;
+            background-color: variables.$surface-300;
+            margin-right: 5px;
+            transition: border-width 0.1s linear; 
+        }
+        & > input[type=radio] {
+            border-radius: 50%;
+        }
+        & > input:checked {
+            border-width: 0.25em;
+            transition: border-width 0.1s linear;
+        }
+    }
+}
+
 input[type=number]{
     padding: 0.5em;
     width: calc(25% - 1.2em);
@@ -90,6 +121,9 @@ input.smallInput {
     &.center {
         align-items: center;
     }
+    &.spaceAround {
+        justify-content: space-around;
+    }
     & > .flexRight {
         margin-left: auto;
     }
@@ -146,8 +180,10 @@ input.smallInput {
 
 #inputPanel {
     & > .materialCard {
-        display:grid;
-        grid-template-columns: repeat(2, calc(50% - 2.5vw));
+        &:not(.flexContainer){
+            display:grid;
+            grid-template-columns: repeat(2, calc(50% - 2.5vw)); 
+        }
         width: calc(70vw - 40px);
         margin-top: 5px;
         &:first-of-type {
