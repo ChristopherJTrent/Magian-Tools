@@ -10,21 +10,20 @@ export default class DelayInput extends Component {
     }
     render() {
         this.element.classList.add('flexContainer', 'vertical', 'center')
-
         const label = document.createElement('label')
         const mainHand = document.createElement('input')
+        //! This must remain in this position in the code.
         mainHand.id = 'main-hand-delay'
 
         label.setAttribute('for', mainHand.id)
         label.innerText = 'Main Hand base delay'
 
+        
         mainHand.setAttribute('type', 'number')
         mainHand.setAttribute('min', '1')
         mainHand.setAttribute('max', '999')
         mainHand.setAttribute('value', this.getMh().value)
-
         mainHand.addEventListener('input', () => this.setMh(mainHand.valueAsNumber))
-
         mainHand.classList.add('smallInput')
 
         this.appendChild(label)

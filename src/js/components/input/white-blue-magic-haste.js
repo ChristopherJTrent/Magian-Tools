@@ -2,6 +2,7 @@ import { Component } from "../../lib/Nyzul/index.mjs";
 import { Storehouse } from "../../lib/Storehouse/index.mjs";
 
 export default class WhiteBlueMagicHaste extends Component {
+    /** @type {{label: String, id: String, value: Number, default?: boolean}[]} */
     static FIELD_DEFS = [
         {
             label: "No Magical Haste",
@@ -52,8 +53,8 @@ export default class WhiteBlueMagicHaste extends Component {
         this.element.id = 'white-blue-magic-haste';
 
         this.eventCallback = this.handleInputEvent.bind(this);
-        this.embravaCallback = this.embravaHandler.bind(this)
-        this.mightyGuardCallback= this.mightyGuardHandler.bind(this)
+        this.embravaCallback = this.#embravaHandler.bind(this)
+        this.mightyGuardCallback= this.#mightyGuardHandler.bind(this)
 
         this.element.classList.add('flexContainer', 'vertical');
         [this.setProvider, this.getProvider] = Storehouse.registerArrayProvider('wb-magic-haste', [0,0,0])
@@ -68,10 +69,10 @@ export default class WhiteBlueMagicHaste extends Component {
             containingBlock.appendChild(this.hasteSpell(def))
         }
         this.setProvider(0,0)
-        containingBlock.appendChild(this.mightyGuard())
+        containingBlock.appendChild(this.#mightyGuard())
         this.setProvider(1, 0)
 
-        containingBlock.appendChild(this.embrava())
+        containingBlock.appendChild(this.#embrava())
         this.setProvider(2, 0)
 
         this.appendChild(containingBlock)
@@ -85,7 +86,11 @@ export default class WhiteBlueMagicHaste extends Component {
         e.stopPropagation()
         this.setProvider(0, parseInt(e.target.value))
     }
-
+    /**
+     * 
+     * @param {{label: String, id: String, value: Number, default?: boolean}} def 
+     * @returns {HTMLElement}
+     */
     hasteSpell(def) {
         const label = document.createElement('label')
         const input = document.createElement('input')
@@ -101,7 +106,7 @@ export default class WhiteBlueMagicHaste extends Component {
         return label
     }
 
-    embrava() {
+    #embrava() {
         const embrava = document.createElement('label')
         embrava.setAttribute('for', 'embrava')
         const embravaCheckbox = document.createElement('input')
@@ -114,7 +119,7 @@ export default class WhiteBlueMagicHaste extends Component {
         return embrava
     }
 
-    mightyGuard() {
+    #mightyGuard() {
         const mightyGuard = document.createElement('label')
         mightyGuard.setAttribute('for', 'mightyGuard')
         
@@ -128,7 +133,7 @@ export default class WhiteBlueMagicHaste extends Component {
         return mightyGuard
     }
 
-    embravaHandler(e) {
+    #embravaHandler(e) {
         e.stopPropagation()
         if(e.target.checked) {
             this.setProvider(2, 266)
@@ -136,7 +141,7 @@ export default class WhiteBlueMagicHaste extends Component {
             this.setProvider(2, 0)
         }
     }
-    mightyGuardHandler(e) {
+    #mightyGuardHandler(e) {
         e.stopPropagation()
         if(e.target.checked) {
             this.setProvider(1, 150)
