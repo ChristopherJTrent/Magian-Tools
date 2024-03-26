@@ -15,6 +15,7 @@ export default class DelayInput extends Component {
 		const mainHand = document.createElement('input')
 		mainHand.id = 'main-hand-delay'
 
+
 		label.setAttribute('for', mainHand.id)
 		label.innerText = 'Main Hand base delay'
 

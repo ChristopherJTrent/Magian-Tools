@@ -128,6 +128,7 @@ export default class WhiteBlueMagicHaste extends Component {
 		return mightyGuard
 	}
 
+
 	embravaHandler(e) {
 		e.stopPropagation()
 		if(e.target.checked) {
