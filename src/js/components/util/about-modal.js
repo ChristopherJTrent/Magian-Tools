@@ -40,7 +40,7 @@ export default class AboutModal extends Component {
 		const equipmentHeading = document.createElement('h3')
 		const equipmentDescription = document.createElement('p')
 		equipmentHeading.innerText = 'Equipment'
-		equipmentDescription.innerText = 'Input your equipment stats into the grids of boxes on the first card'
+		equipmentDescription.innerText = 'Input your equipment stats into the boxes on the first card'
 		elements.push(equipmentHeading, equipmentDescription)
 
 		const magicHeading = document.createElement('h3')
