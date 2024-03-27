@@ -33,6 +33,10 @@ export default class BardHaste extends Component {
 	}
 
 	render() {
+		this.appendChild(Nyzul.createElement({
+			type: 'legend',
+			innerText: 'Bard Music'
+		}))
 		this.appendChild(wrapWithRightSideLabel(Nyzul.createElement({
 			type: 'input',
 			id: 'a-march',
