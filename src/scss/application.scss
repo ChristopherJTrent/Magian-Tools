@@ -29,6 +29,10 @@ fieldset{
             background-color: variables.$surface-300;
             margin-right: 5px;
             transition: border-width 0.1s linear; 
+            &:disabled {
+                background-color: variables.$surface-400;
+                border-color: variables.$surface-500;
+            }
         }
         & > input[type=radio] {
             border-radius: 50%;
@@ -37,6 +41,10 @@ fieldset{
             border-width: 0.25em;
             transition: border-width 0.1s linear;
         }
+    }
+    &.phantom {
+        border: none;
+        padding: 0px;
     }
 }
 
