@@ -115,6 +115,7 @@ export default class BardHaste extends Component {
 					listener: (e) => {
 						if (e.target.checked) {
 							document.getElementById('marcatoCheckbox').checked = false
+							this.setJobActions(1, false)
 						}
 					}
 				},
@@ -137,6 +138,7 @@ export default class BardHaste extends Component {
 					listener: (e) => {
 						if (e.target.checked) {
 							document.getElementById('soulVoiceCheckbox').checked = false
+							this.setJobActions(0, false)
 						}
 					}
 				},
