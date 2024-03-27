@@ -9,8 +9,6 @@ export default class AboutModal extends Component {
 	render() {
 		const card = document.createElement('div')
 		card.classList.add('materialCard')
-		const description = document.createElement('p')
-		description.innerText = 'Calculate your tp per hit with this tool. Input your haste+% into the first grid of boxes, and your Store TP+ into the second grid. The sidebar will update with your overall haste percentage and tp per hit.'
 		const closeButton = document.createElement('button')
 		closeButton.classList.add('styledButton')
 		closeButton.innerText = 'Close'
@@ -18,17 +16,41 @@ export default class AboutModal extends Component {
 		const title = document.createElement('p')
 		title.classList.add('title-text')
 		title.innerText = 'About'
-
+		
 		const titleBar = document.createElement('div')
 		titleBar.classList.add('flexContainer', 'horizontal', 'center', 'titlebar')
 		titleBar.appendChild(title)
 		titleBar.appendChild(closeButton)
 		card.appendChild(titleBar)
+		AboutModal.generateCopy(card)
 		card.appendChild(new FlexBreak().render())
-		card.appendChild(description)
 		this.appendChild(card)
 		return this.finalize()
 	}
+	/**
+	 * 
+	 * @param {HTMLElement|NyzulNode} parent 
+	 */
+	static generateCopy(parent) {
+		const elements = []
+		const appDescription = document.createElement('p')
+		appDescription.innerText = 'Magian Calc is a port of XIcalc\'s delay calculator.'
+		elements.push(appDescription)
+
+		const equipmentHeading = document.createElement('h3')
+		const equipmentDescription = document.createElement('p')
+		equipmentHeading.innerText = 'Equipment'
+		equipmentDescription.innerText = 'Input your equipment stats into the grids of boxes on the first card'
+		elements.push(equipmentHeading, equipmentDescription)
+
+		const magicHeading = document.createElement('h3')
+		const magicDescription = document.createElement('p')
+		magicHeading.innerText = 'Magic'
+		magicDescription.innerText = 'Input your expected magical haste using the inputs on the second card. White/Blue magic haste does not stack except for Mighty Guard and Embrava.'
+		elements.push(magicHeading, magicDescription)
+
+		elements.forEach((e) => parent.appendChild(e))
+	} 
 	static closeModal() {
 		const modal = document.getElementById('about-modal')
 		modal.classList.remove('active')

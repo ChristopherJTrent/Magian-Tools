@@ -246,6 +246,18 @@ input.smallInput {
         width: 40vw;
         height: min-content;
         padding: 5px;
+        & h2 {
+            font-size: 2em;
+            font-weight: bolder;
+        }
+        & h3 {
+            font-size: larger;
+            font-style: italic;
+            font-weight: bold;
+        }
+        & h2, h3 {
+            margin-top: 5px;
+        }
         & .styledButton {
             margin:0px;
             width: min-content;
