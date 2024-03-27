@@ -13,11 +13,12 @@ const honorMarchBonuses     = [126, 138, 150, 162, 174]
 export default function calculateBardHaste(
 	[advMarch, vicMarch, honMarch], 
 	songBonus, 
-	[soulVoice, marcato]) {
-	
+	[soulVoice, marcato],
+	isTrust) {
 	let total = 0
-	if (advMarch) total += advancingMarchBonuses[songBonus]
-	if (vicMarch) total += victoryMarchBonuses[songBonus]
+	if (advMarch) total += advancingMarchBonuses[isTrust ? 0 : songBonus]
+	if (vicMarch) total += victoryMarchBonuses[isTrust ? 0 : songBonus]
+	if (isTrust) return total
 	if (honMarch) total += honorMarchBonuses[Math.max(songBonus, 4)]
 	if (soulVoice) total *= 2
 	else if (marcato) total *= 1.5

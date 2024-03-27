@@ -22,9 +22,8 @@ export default class MagicHastePanel extends Component {
 
 	afterRender() {
 		Storehouse.registerCombinatorProvider('total-magic-haste', [
-			{
-				key: 'wb-magic-haste',
-			}
+			{ key: 'wb-magic-haste' },
+			{ key: 'bard-haste'}
 		], (vals) => Math.max(sum(vals.map((v) => parseInt(v))), 448))
 	}
 }
