@@ -19,7 +19,7 @@ export default function calculateBardHaste(
 	if (advMarch) total += advancingMarchBonuses[isTrust ? 0 : songBonus]
 	if (vicMarch) total += victoryMarchBonuses[isTrust ? 0 : songBonus]
 	if (isTrust) return total
-	if (honMarch) total += honorMarchBonuses[Math.max(songBonus, 4)]
+	if (honMarch) total += honorMarchBonuses[Math.min(songBonus, 4)]
 	if (soulVoice) total *= 2
 	else if (marcato) total *= 1.5
 	return total
