@@ -28,31 +28,16 @@ In addition, this project will include:
 
 ## Technologies, Libraries, and APIs
 
-This project will be implemented with the following tools:
+This project uses the following tools:
 - Core HTML visualization elements
 - Webpack and Babel for transpilation and bundling
 - NPM to manage project dependencies
+- [Sass](https://sass-lang.com/) for styling
+- [Nyzul](https://github.com/ChristopherJTrent/Nyzul) for layout
+- [Storehouse](https://github.com/ChristopherJTrent/Storehouse) for data management
 - [Jasmine](https://jasmine.github.io) for testing
 - [Trello](https://trello.com/b/V5stLJ8s/calc) for project management
 
-## Implementation Timeline
-This timeline is a best-guess approximation of how long everything should take to complete.
-- Thursday Evening: finish final proposal and perform project setup
-- Friday Afternoon + Weekend
-  - Friday Afternoon: Write unit tests for the state manager
-  - Weekend: Implement the state manager and component framework
-- Monday
-    - Before lunch: write tests for the calculation methods
-    - After lunch: create the equipment grid component
-- Tuesday
-    - Before lunch: implement the feedback sidebar component
-    - After lunch: start CSS
-- Wednesday: 
-    - Before lunch: complete the CSS
-    - After lunch: perform manual end-to-end testing of the user interface
-- Thursday:
-    - Before lunch: setup github pages
-    - After Lunch: present the finished product
 
 ## Wireframe  
 ![Main Screen](./assets/mockup-1.png)
