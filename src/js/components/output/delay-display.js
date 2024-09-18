@@ -18,6 +18,5 @@ export default class DelayDisplay extends Component {
 		}).withFormatting(' (', ' seconds per round)')
 		this.appendComponent(section1)
 		this.appendComponent(section2)
-		return this.finalize()
 	}
 }

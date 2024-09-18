@@ -25,7 +25,6 @@ export default class AboutModal extends Component {
 		AboutModal.generateCopy(card)
 		card.appendChild(new FlexBreak().render())
 		this.appendChild(card)
-		return this.finalize()
 	}
 	/**
 	 * 

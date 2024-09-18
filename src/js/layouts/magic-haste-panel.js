@@ -16,9 +16,6 @@ export default class MagicHastePanel extends Component {
 		this.appendComponent(new WhiteBlueMagicHaste())
 		this.appendComponent(new BardHaste())
 		this.appendComponent(new GeomancyHaste())
-
-		this.afterRender()
-		return this.finalize()
 	}
 
 	afterRender() {

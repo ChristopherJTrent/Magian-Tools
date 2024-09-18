@@ -84,7 +84,6 @@ export default class GeomancyHaste extends Component {
 				type: 'change',
 				listener: (e) => this.setGeomancyBonus(e.target.value)
 			}]
-		}), 'Geomancy +'))
-		return this.finalize()
+		}), 'Geomancy +'))	
 	}
 }

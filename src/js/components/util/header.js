@@ -38,7 +38,6 @@ export default class Header extends Component {
 		socials.appendChild(this.github())
 		this.appendChild(socials)
         
-		return this.finalize()
 	}
 	linkedin() {
 		const linkedin = document.createElement('a')

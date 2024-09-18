@@ -75,7 +75,6 @@ export default class WhiteBlueMagicHaste extends Component {
 		this.setProvider(2, 0)
 
 		this.appendChild(containingBlock)
-		return this.finalize()
 	}
 	/**
      * 

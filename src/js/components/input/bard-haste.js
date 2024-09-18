@@ -33,7 +33,7 @@ export default class BardHaste extends Component {
 	}
 
 	render() {
-		this.appendChild(Nyzul.createElement({
+		this.append(Nyzul.createElement({
 			type: 'legend',
 			innerText: 'Bard Music'
 		}))
@@ -170,8 +170,6 @@ export default class BardHaste extends Component {
 				}
 			]
 		}), 'Trust'))
-		this.afterRender()
-		return this.finalize()
 	}
 
 	afterRender() {

@@ -17,6 +17,5 @@ export default class TpDisplay extends Component {
 			.withFormatting('', ' hits to 1000 TP)')
 		this.appendComponent(section1)
 		this.appendComponent(section2)
-		return this.finalize()
 	}
 }
