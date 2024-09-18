@@ -1,5 +1,6 @@
 import { Component, Nyzul } from '../../lib/Nyzul/index.mjs'
 import { Storehouse } from '../../lib/Storehouse/index.mjs'
+import wrapWithRightSideLabel from '../util/checklist-element.js'
 
 export default class GeomancyHaste extends Component {
 	constructor() {
@@ -36,18 +37,54 @@ export default class GeomancyHaste extends Component {
 	render() {
 		this.appendChild(Nyzul.createElement({
 			type:'legend',
-			innerText:'test'
+			innerText:'Geomancy'
 		}))
-		this.appendChild(Nyzul.createElement({
-			
-		}))
-		this.appendChild(Nyzul.createElement({
-			type:'input',
-			id:'testInput',
+		this.appendChild(wrapWithRightSideLabel(Nyzul.createElement({
+			id: 'geomancy-skill-input',
+			type: 'input',
+			classes: ['smallInput'],
 			attributes: {
-				type: 'text'
-			}
-		}))
+				type: 'number',
+				min: 0,
+				max: 557	
+			},
+			eventCallbacks: [
+				{
+					type: 'change',
+					listener: (e) => this.setSkill(0, e.target.value)
+				}
+			]
+		}), 'Geomancy Skill'))
+		this.appendChild(wrapWithRightSideLabel(Nyzul.createElement({
+			id: 'handbell-skill-input',
+			type: 'input',
+			classes: ['smallInput'],
+			attributes: {
+				type: 'number',
+				min: 0,
+				max: 518
+			},
+			eventCallbacks: [
+				{
+					type: 'change',
+					listener: (e) => this.setSkill(1, e.target.value)
+				}
+			]
+		}), 'Handbell Skill'))
+		this.appendChild(wrapWithRightSideLabel(Nyzul.createElement({
+			id: 'geomancy-bonus-input',
+			type: 'input',
+			classes: ['smallInput'],
+			attributes: {
+				type: 'number',
+				min: 0,
+				max: 10
+			},
+			eventCallbacks: [{
+				type: 'change',
+				listener: (e) => this.setGeomancyBonus(e.target.value)
+			}]
+		}), 'Geomancy +'))
 		return this.finalize()
 	}
 }
